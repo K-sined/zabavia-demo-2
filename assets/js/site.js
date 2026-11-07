@@ -98,7 +98,7 @@
  $$('.nums [data-n]').forEach(b=>{const n=+b.dataset.n,o={v:0};G.to(o,{v:n,duration:1.5,ease:'power2.out',onUpdate:()=>b.textContent=Math.round(o.v),scrollTrigger:{trigger:b,start:'top 92%',once:true}})});
 
  /* лист отступает в глубину, когда на него наезжает следующий */
- ScrollTrigger.matchMedia({'(min-width:900px) and (min-height:641px)':()=>{
+ ScrollTrigger.matchMedia({'(min-width:900px) and (min-height:641px) and (min-aspect-ratio:1/1)':()=>{
   const sh=$$('.sheet');
   sh.forEach((s,i)=>{const next=sh[i+1];if(!next)return;
    G.to($('.sheet-in',s),{scale:.955,ease:'none',scrollTrigger:{trigger:next,start:'top bottom',end:'top top',scrub:true}})});
