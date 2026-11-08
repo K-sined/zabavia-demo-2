@@ -117,6 +117,9 @@ a:hover>.p-cap i{background:var(--ink);color:var(--paper);transform:translate(2p
 .lineup .lr.f{margin-top:calc(var(--h) * -.28);position:relative;z-index:1}
 .lineup .lr.b.sh{transform:translateX(calc(var(--h) * -.28))}
 .lineup .lr.f.sh{transform:translateX(calc(var(--h) * .28))}
+/* 08.11: во втором варианте ряды не перекрываются */
+.lineup.stag{--h:min(calc(100cqh / 2.06),calc(100cqw / var(--sum)))}
+.lineup.stag .lr.f{margin-top:calc(var(--h) * .04)}
 
 .lineup img{flex:none;width:auto;filter:drop-shadow(0 16px 12px rgba(30,23,18,.2));transition:transform .7s var(--spring)}
 .sheet:hover .lineup img:nth-child(2n){transform:translateY(-10px)}
