@@ -111,8 +111,8 @@ a:hover>.p-cap i{background:var(--ink);color:var(--paper);transform:translate(2p
 .sname{font-size:clamp(68px,min(10.5vw,19vh),176px);letter-spacing:-.022em}
 .sheet-m .kick{color:var(--ac);font-weight:600;margin-bottom:5px}
 .sheet-m p:last-child{max-width:40ch}
-.lineup{flex:1;min-height:0;margin-top:14px;display:flex;align-items:center;justify-content:center;gap:clamp(6px,1vw,16px);--h:min(46vh,calc((min(100vw,1500px) - 8vw - (var(--count) - 1)*16px)/var(--sum)))}
-.lineup img{flex:none;height:var(--h);width:auto;filter:drop-shadow(0 16px 12px rgba(30,23,18,.2));transition:transform .7s var(--spring)}
+.lineup{flex:1;min-height:0;margin-top:14px;display:flex;align-items:flex-end;justify-content:center;gap:clamp(6px,1vw,16px);--h:min(46vh,calc((min(100vw,1500px) - 8vw - (var(--count) - 1)*16px)/var(--sum)))}
+.lineup img{flex:none;width:auto;filter:drop-shadow(0 16px 12px rgba(30,23,18,.2));transition:transform .7s var(--spring)}
 .sheet:hover .lineup img:nth-child(2n){transform:translateY(-10px)}
 .sheet .tlink{align-self:flex-end}
 @media(max-width:899px),(max-height:640px),(max-aspect-ratio:1/1){.sheet{position:static;min-height:0;box-shadow:none}.sheet-in{min-height:0;padding-top:44px;padding-bottom:28px}}
@@ -213,7 +213,7 @@ a:hover>.p-cap i{background:var(--ink);color:var(--paper);transform:translate(2p
 .fig{display:flex;flex:1;align-items:flex-end;justify-content:center;width:100%;margin:6px 0 12px;flex:none;aspect-ratio:5/4}
 .card img{height:auto;filter:drop-shadow(0 11px 9px rgba(30,23,18,.2));transition:transform .7s var(--spring)}
 .card:hover img{transform:translateY(-6px)}
-.card b{font-size:clamp(24px,2.1vw,31px);line-height:1.05}
+.card b{font-size:clamp(21px,1.9vw,29px);line-height:1.08;overflow-wrap:break-word}
 .card small{font-size:14px;margin-top:3px;color:var(--muted)}
 .real{margin:clamp(30px,5vw,60px) 0 0;text-align:center;border-top:1px solid var(--rule);padding-top:clamp(18px,3vw,36px)}
 .real img{margin:auto;width:100%;height:clamp(180px,24vw,340px);object-fit:contain;filter:drop-shadow(0 18px 14px rgba(30,23,18,.2))}
