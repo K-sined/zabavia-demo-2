@@ -106,5 +106,11 @@
  addEventListener('load',()=>ScrollTrigger.refresh());
 })();
 
-/* preload-lazy: после загрузки страницы догружаем все картинки заранее, чтобы фигурки не появлялись постепенно */
-window.addEventListener('load',()=>setTimeout(()=>document.querySelectorAll('img[loading=lazy]').forEach(i=>{i.loading='eager'}),400));
+/* preload-lazy: после загрузки страницы догружаем картинки заранее очередью по 4, в порядке показа на странице.
+   Все разом делят канал и приходят одновременно поздно; очередью первые коллекции появляются сразу, дальние — пока смотрят первые. */
+window.addEventListener('load',()=>{
+  const q=[...document.querySelectorAll('img[loading=lazy]')].filter(i=>!i.complete);
+  let active=0;
+  const next=()=>{while(active<4&&q.length){const i=q.shift();if(i.complete)continue;active++;const done=()=>{active--;next()};i.addEventListener('load',done,{once:true});i.addEventListener('error',done,{once:true});i.loading='eager'}};
+  setTimeout(next,150);
+});
